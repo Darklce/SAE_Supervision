@@ -63,7 +63,6 @@
             this.m_BoutonTapis.TabIndex = 2;
             this.m_BoutonTapis.Text = "Tourner Tapis";
             this.m_BoutonTapis.UseVisualStyleBackColor = false;
-            this.m_BoutonTapis.Click += new System.EventHandler(this.m_BoutonTapis_Click);
             this.m_BoutonTapis.MouseDown += new System.Windows.Forms.MouseEventHandler(this.M_button_tapis);
             this.m_BoutonTapis.MouseUp += new System.Windows.Forms.MouseEventHandler(this.M_button_tapis_up);
             // 
@@ -76,7 +75,8 @@
             this.m_BoutonLacher.TabIndex = 3;
             this.m_BoutonLacher.Text = "LacherPiece";
             this.m_BoutonLacher.UseVisualStyleBackColor = false;
-            this.m_BoutonLacher.Click += new System.EventHandler(this.m_BoutonLacher_Click);
+            this.m_BoutonLacher.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonLacher_MouseDown);
+            this.m_BoutonLacher.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonLacher_MouseUp);
             // 
             // m_BoutonAU
             // 
@@ -97,7 +97,8 @@
             this.m_BoutonSaisir.TabIndex = 5;
             this.m_BoutonSaisir.Text = "Saisir Piece";
             this.m_BoutonSaisir.UseVisualStyleBackColor = false;
-            this.m_BoutonSaisir.Click += new System.EventHandler(this.m_BoutonSaisir_Click);
+            this.m_BoutonSaisir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSaisir_MouseDown);
+            this.m_BoutonSaisir.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSaisir_MouseUp);
             // 
             // button5
             // 
@@ -115,9 +116,10 @@
             this.m_BoutonSortirRouge.Name = "m_BoutonSortirRouge";
             this.m_BoutonSortirRouge.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSortirRouge.TabIndex = 7;
-            this.m_BoutonSortirRouge.Text = "SORTIR ROUGE ";
+            this.m_BoutonSortirRouge.Text = "Sortir Rouge";
             this.m_BoutonSortirRouge.UseVisualStyleBackColor = false;
-            this.m_BoutonSortirRouge.Click += new System.EventHandler(this.m_BoutonSortirRouge_Click);
+            this.m_BoutonSortirRouge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSortirRouge_MouseDown);
+            this.m_BoutonSortirRouge.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSortirRouge_MouseUp);
             // 
             // m_BoutonSortirNoir
             // 
@@ -126,9 +128,10 @@
             this.m_BoutonSortirNoir.Name = "m_BoutonSortirNoir";
             this.m_BoutonSortirNoir.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSortirNoir.TabIndex = 8;
-            this.m_BoutonSortirNoir.Text = "SORTIR NOIRE";
+            this.m_BoutonSortirNoir.Text = "Sortir Noire";
             this.m_BoutonSortirNoir.UseVisualStyleBackColor = false;
-            this.m_BoutonSortirNoir.Click += new System.EventHandler(this.m_BoutonSortirNoir_Click);
+            this.m_BoutonSortirNoir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSortirNoir_MouseDown);
+            this.m_BoutonSortirNoir.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonSortirNoir_MouseUp);
             // 
             // m_BoutonPalp
             // 
@@ -139,7 +142,8 @@
             this.m_BoutonPalp.TabIndex = 9;
             this.m_BoutonPalp.Text = "Descendre Palpeur";
             this.m_BoutonPalp.UseVisualStyleBackColor = false;
-            this.m_BoutonPalp.Click += new System.EventHandler(this.m_BoutonPalp_Click);
+            this.m_BoutonPalp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonPalp_MouseDown);
+            this.m_BoutonPalp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonPalp_MouseUp);
             // 
             // m_BoutonUsin
             // 
@@ -150,7 +154,8 @@
             this.m_BoutonUsin.TabIndex = 10;
             this.m_BoutonUsin.Text = "Bras sur Usin";
             this.m_BoutonUsin.UseVisualStyleBackColor = false;
-            this.m_BoutonUsin.Click += new System.EventHandler(this.m_BoutonUsin_Click);
+            this.m_BoutonUsin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonUsin_MouseDown);
+            this.m_BoutonUsin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonUsin_MouseUp);
             // 
             // m_BoutonTri
             // 
@@ -161,7 +166,8 @@
             this.m_BoutonTri.TabIndex = 11;
             this.m_BoutonTri.Text = "Bras Sur Tri";
             this.m_BoutonTri.UseVisualStyleBackColor = false;
-            this.m_BoutonTri.Click += new System.EventHandler(this.m_BoutonTri_Click);
+            this.m_BoutonTri.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonTri_MouseDown);
+            this.m_BoutonTri.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonTri_MouseUp);
             // 
             // m_BoutonSortir
             // 
@@ -172,7 +178,8 @@
             this.m_BoutonSortir.TabIndex = 12;
             this.m_BoutonSortir.Text = "Sortir Bras";
             this.m_BoutonSortir.UseVisualStyleBackColor = false;
-            this.m_BoutonSortir.Click += new System.EventHandler(this.m_BoutonSortir_Click);
+            this.m_BoutonSortir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_button_Sortir_Down);
+            this.m_BoutonSortir.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_button_Sortir_Up);
             // 
             // m_BoutonRentrer
             // 

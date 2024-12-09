@@ -24,113 +24,19 @@ namespace SAE
         }
 
 
-
+        // Activation des boutons pour le Tapis
 
         private void m_BoutonTapis_Click(object sender, EventArgs e)
         {
             m_MENU.plc.Write("M1.2", 1);
         }
         
-
         private void m_BoutonTapis_off_Click(object sender, EventArgs e)
         {
             m_MENU.plc.Write("M1.2", 0);
         }
 
-
-
-        private void m_BoutonSortir_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.1", 1);
-        }
-        private void m_BoutonSortir_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.1", 0);
-
-        }
-
-
-
-        private void m_BoutonTri_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.2", 1);
-        }
-        private void m_BoutonTri_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.2", 0);
-        }
-
-
-
-
-
-        private void m_BoutonUsin_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.3", 1);
-        }
-        private void m_BoutonUsin_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.3", 0);
-        }
-
-
-
-
-        private void m_BoutonPalp_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.4", 1);
-        }
-        private void m_BoutonPalp_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.4", 0);
-        }
-
-
-
-        private void m_BoutonSaisir_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.6", 1);
-        }
-        private void m_BoutonSaisir_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.6", 0);
-        }
-
-
-
-
-        private void m_BoutonLacher_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.5", 1);
-        }
-        private void m_BoutonLacher_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.5", 0);
-        }
-
-
-
-
-        private void m_BoutonSortirNoir_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.7", 1);
-        }
-        private void m_BoutonSortirNoir_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M0.7", 0);
-        }
-
-
-
-
-        private void m_BoutonSortirRouge_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M1.0", 1);
-        }
-        private void m_BoutonSortirRouge_off_Click(object sender, EventArgs e)
-        {
-            m_MENU.plc.Write("M1.0", 0);
-        }
+        //Activation des boutons pour rentrer le Bras 
 
         private void m_BoutonRentrer_MouseDown(object sender, MouseEventArgs e)
         {
@@ -143,6 +49,9 @@ namespace SAE
             m_MENU.plc.Write("M0.0", 0);
         }
 
+        //Activation des boutons pour le Tapis
+
+
         private void M_button_tapis(object sender, MouseEventArgs e)
         {
             m_MENU.plc.Write("M1.2", 1);
@@ -154,5 +63,102 @@ namespace SAE
             m_MENU.plc.Write("M1.2", 0);
 
         }
+
+
+        //Activation des boutons pour Sortir le bras
+
+        private void m_button_Sortir_Down(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.1", 1); // Turn on the output
+        }
+
+        private void m_button_Sortir_Up(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.1", 0); // Turn off the output
+        }
+
+
+        //Activation des boutons pour mettre le bras sur le TRI
+
+        private void m_BoutonTri_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.2", 1); // Turn on the output
+        }
+
+        private void m_BoutonTri_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.2", 0); // Turn off the output
+        }
+
+
+        //Activation des boutons pour mettre le bras sur l'USINAGE
+
+        private void m_BoutonUsin_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.3", 1); // Turn on the output
+        }
+        private void m_BoutonUsin_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.3", 0); // Turn off the output
+        }
+
+        //Activation des boutons pour descendre le Palpeur
+
+        private void m_BoutonPalp_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.4", 1); // Turn on the output
+        }
+        private void m_BoutonPalp_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.4", 0); // Turn off the output
+        }
+
+        //Activation des boutons pour saisir la pièce
+
+        private void m_BoutonSaisir_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.6", 1); // Turn on the output
+        }
+        private void m_BoutonSaisir_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.6", 0); // Turn off the output
+        }
+
+        //Activation des boutons pour lâcher la pièce
+
+        private void m_BoutonLacher_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.5", 1); // Turn on the output  
+        }
+        private void m_BoutonLacher_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.5", 0); // Turn off the output
+        }
+
+        //Activation des boutons pour sortir la pièce sur coté noir
+
+        private void m_BoutonSortirNoir_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.7", 1); // Turn on the output
+        }
+        private void m_BoutonSortirNoir_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M0.7", 0); // Turn off the output
+        }
+
+        //Activation des boutons pour sortir la pièce sur coté rouge
+
+        private void m_BoutonSortirRouge_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M1.0", 1); // Turn on the output
+        }
+        private void m_BoutonSortirRouge_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_MENU.plc.Write("M1.0", 0); // Turn off the output
+        }
+
+        
+
+
     }
 }
