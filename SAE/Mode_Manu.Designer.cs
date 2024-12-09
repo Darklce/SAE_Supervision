@@ -144,7 +144,7 @@
             // m_BoutonUsin
             // 
             this.m_BoutonUsin.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonUsin.Location = new System.Drawing.Point(251, 175);
+            this.m_BoutonUsin.Location = new System.Drawing.Point(251, 186);
             this.m_BoutonUsin.Name = "m_BoutonUsin";
             this.m_BoutonUsin.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonUsin.TabIndex = 10;
@@ -177,7 +177,7 @@
             // m_BoutonRentrer
             // 
             this.m_BoutonRentrer.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonRentrer.Location = new System.Drawing.Point(35, 60);
+            this.m_BoutonRentrer.Location = new System.Drawing.Point(49, 60);
             this.m_BoutonRentrer.Name = "m_BoutonRentrer";
             this.m_BoutonRentrer.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonRentrer.TabIndex = 13;

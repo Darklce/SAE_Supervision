@@ -33,12 +33,14 @@
             this.m_BoutonConnecter = new System.Windows.Forms.Button();
             this.m_BoutonDeconnecter = new System.Windows.Forms.Button();
             this.m_Label_Connection = new System.Windows.Forms.Label();
+            this.m_label_titre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_BoutonAuto
             // 
             this.m_BoutonAuto.BackColor = System.Drawing.Color.SeaGreen;
-            this.m_BoutonAuto.Location = new System.Drawing.Point(169, 121);
+            this.m_BoutonAuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_BoutonAuto.Location = new System.Drawing.Point(143, 96);
             this.m_BoutonAuto.Name = "m_BoutonAuto";
             this.m_BoutonAuto.Size = new System.Drawing.Size(177, 83);
             this.m_BoutonAuto.TabIndex = 0;
@@ -49,7 +51,8 @@
             // m_BoutonManu
             // 
             this.m_BoutonManu.BackColor = System.Drawing.Color.DarkCyan;
-            this.m_BoutonManu.Location = new System.Drawing.Point(392, 121);
+            this.m_BoutonManu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_BoutonManu.Location = new System.Drawing.Point(479, 96);
             this.m_BoutonManu.Name = "m_BoutonManu";
             this.m_BoutonManu.Size = new System.Drawing.Size(172, 83);
             this.m_BoutonManu.TabIndex = 1;
@@ -59,31 +62,47 @@
             // 
             // m_BoutonConnecter
             // 
+            this.m_BoutonConnecter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.m_BoutonConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_BoutonConnecter.Location = new System.Drawing.Point(90, 317);
             this.m_BoutonConnecter.Name = "m_BoutonConnecter";
             this.m_BoutonConnecter.Size = new System.Drawing.Size(87, 76);
             this.m_BoutonConnecter.TabIndex = 2;
-            this.m_BoutonConnecter.Text = "Connecter";
-            this.m_BoutonConnecter.UseVisualStyleBackColor = true;
+            this.m_BoutonConnecter.Text = "Connexion";
+            this.m_BoutonConnecter.UseVisualStyleBackColor = false;
             this.m_BoutonConnecter.Click += new System.EventHandler(this.button1_Click);
             // 
             // m_BoutonDeconnecter
             // 
-            this.m_BoutonDeconnecter.Location = new System.Drawing.Point(228, 317);
+            this.m_BoutonDeconnecter.BackColor = System.Drawing.Color.Red;
+            this.m_BoutonDeconnecter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_BoutonDeconnecter.Location = new System.Drawing.Point(198, 317);
             this.m_BoutonDeconnecter.Name = "m_BoutonDeconnecter";
             this.m_BoutonDeconnecter.Size = new System.Drawing.Size(87, 76);
             this.m_BoutonDeconnecter.TabIndex = 3;
-            this.m_BoutonDeconnecter.Text = "Deconnecter";
-            this.m_BoutonDeconnecter.UseVisualStyleBackColor = true;
+            this.m_BoutonDeconnecter.Text = "Déconnexion";
+            this.m_BoutonDeconnecter.UseVisualStyleBackColor = false;
             this.m_BoutonDeconnecter.Click += new System.EventHandler(this.m_Bouton_Deconnecter_Click);
             // 
             // m_Label_Connection
             // 
             this.m_Label_Connection.AutoSize = true;
-            this.m_Label_Connection.Location = new System.Drawing.Point(373, 339);
+            this.m_Label_Connection.Location = new System.Drawing.Point(119, 396);
             this.m_Label_Connection.Name = "m_Label_Connection";
             this.m_Label_Connection.Size = new System.Drawing.Size(0, 13);
             this.m_Label_Connection.TabIndex = 4;
+            // 
+            // m_label_titre
+            // 
+            this.m_label_titre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_label_titre.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_label_titre.Location = new System.Drawing.Point(215, 9);
+            this.m_label_titre.Name = "m_label_titre";
+            this.m_label_titre.Size = new System.Drawing.Size(368, 40);
+            this.m_label_titre.TabIndex = 5;
+            this.m_label_titre.Text = "Supervision SAÉ P3";
+            this.m_label_titre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.m_label_titre.Click += new System.EventHandler(this.m_label_titre_Click);
             // 
             // MENU
             // 
@@ -91,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.m_label_titre);
             this.Controls.Add(this.m_Label_Connection);
             this.Controls.Add(this.m_BoutonDeconnecter);
             this.Controls.Add(this.m_BoutonConnecter);
@@ -110,6 +130,7 @@
         private System.Windows.Forms.Button m_BoutonConnecter;
         private System.Windows.Forms.Button m_BoutonDeconnecter;
         private System.Windows.Forms.Label m_Label_Connection;
+        private System.Windows.Forms.Label m_label_titre;
     }
 }
 
