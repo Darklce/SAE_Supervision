@@ -39,6 +39,7 @@
             // m_BoutonAuto
             // 
             this.m_BoutonAuto.BackColor = System.Drawing.Color.SeaGreen;
+            this.m_BoutonAuto.FlatAppearance.BorderSize = 0;
             this.m_BoutonAuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_BoutonAuto.Location = new System.Drawing.Point(143, 96);
             this.m_BoutonAuto.Name = "m_BoutonAuto";
