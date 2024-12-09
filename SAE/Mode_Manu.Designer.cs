@@ -41,11 +41,14 @@
             this.m_BoutonTri = new System.Windows.Forms.Button();
             this.m_BoutonSortir = new System.Windows.Forms.Button();
             this.m_BoutonRentrer = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Bouton_Retour
             // 
             this.Bouton_Retour.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Bouton_Retour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bouton_Retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bouton_Retour.Location = new System.Drawing.Point(35, 475);
             this.Bouton_Retour.Name = "Bouton_Retour";
             this.Bouton_Retour.Size = new System.Drawing.Size(161, 65);
@@ -57,7 +60,9 @@
             // m_BoutonTapis
             // 
             this.m_BoutonTapis.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonTapis.Location = new System.Drawing.Point(444, 113);
+            this.m_BoutonTapis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonTapis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonTapis.Location = new System.Drawing.Point(431, 210);
             this.m_BoutonTapis.Name = "m_BoutonTapis";
             this.m_BoutonTapis.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonTapis.TabIndex = 2;
@@ -69,7 +74,9 @@
             // m_BoutonLacher
             // 
             this.m_BoutonLacher.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonLacher.Location = new System.Drawing.Point(813, 113);
+            this.m_BoutonLacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonLacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonLacher.Location = new System.Drawing.Point(800, 210);
             this.m_BoutonLacher.Name = "m_BoutonLacher";
             this.m_BoutonLacher.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonLacher.TabIndex = 3;
@@ -91,7 +98,9 @@
             // m_BoutonSaisir
             // 
             this.m_BoutonSaisir.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonSaisir.Location = new System.Drawing.Point(623, 175);
+            this.m_BoutonSaisir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonSaisir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonSaisir.Location = new System.Drawing.Point(610, 272);
             this.m_BoutonSaisir.Name = "m_BoutonSaisir";
             this.m_BoutonSaisir.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSaisir.TabIndex = 5;
@@ -112,7 +121,9 @@
             // m_BoutonSortirRouge
             // 
             this.m_BoutonSortirRouge.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonSortirRouge.Location = new System.Drawing.Point(1229, 113);
+            this.m_BoutonSortirRouge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonSortirRouge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonSortirRouge.Location = new System.Drawing.Point(1216, 210);
             this.m_BoutonSortirRouge.Name = "m_BoutonSortirRouge";
             this.m_BoutonSortirRouge.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSortirRouge.TabIndex = 7;
@@ -124,7 +135,9 @@
             // m_BoutonSortirNoir
             // 
             this.m_BoutonSortirNoir.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonSortirNoir.Location = new System.Drawing.Point(1022, 113);
+            this.m_BoutonSortirNoir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonSortirNoir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonSortirNoir.Location = new System.Drawing.Point(1009, 210);
             this.m_BoutonSortirNoir.Name = "m_BoutonSortirNoir";
             this.m_BoutonSortirNoir.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSortirNoir.TabIndex = 8;
@@ -136,7 +149,9 @@
             // m_BoutonPalp
             // 
             this.m_BoutonPalp.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonPalp.Location = new System.Drawing.Point(623, 60);
+            this.m_BoutonPalp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonPalp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonPalp.Location = new System.Drawing.Point(610, 157);
             this.m_BoutonPalp.Name = "m_BoutonPalp";
             this.m_BoutonPalp.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonPalp.TabIndex = 9;
@@ -148,7 +163,9 @@
             // m_BoutonUsin
             // 
             this.m_BoutonUsin.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonUsin.Location = new System.Drawing.Point(251, 186);
+            this.m_BoutonUsin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonUsin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonUsin.Location = new System.Drawing.Point(238, 283);
             this.m_BoutonUsin.Name = "m_BoutonUsin";
             this.m_BoutonUsin.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonUsin.TabIndex = 10;
@@ -160,7 +177,9 @@
             // m_BoutonTri
             // 
             this.m_BoutonTri.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonTri.Location = new System.Drawing.Point(251, 60);
+            this.m_BoutonTri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonTri.Location = new System.Drawing.Point(238, 157);
             this.m_BoutonTri.Name = "m_BoutonTri";
             this.m_BoutonTri.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonTri.TabIndex = 11;
@@ -172,7 +191,9 @@
             // m_BoutonSortir
             // 
             this.m_BoutonSortir.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonSortir.Location = new System.Drawing.Point(49, 186);
+            this.m_BoutonSortir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonSortir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonSortir.Location = new System.Drawing.Point(36, 283);
             this.m_BoutonSortir.Name = "m_BoutonSortir";
             this.m_BoutonSortir.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonSortir.TabIndex = 12;
@@ -184,7 +205,9 @@
             // m_BoutonRentrer
             // 
             this.m_BoutonRentrer.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.m_BoutonRentrer.Location = new System.Drawing.Point(49, 60);
+            this.m_BoutonRentrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_BoutonRentrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonRentrer.Location = new System.Drawing.Point(36, 157);
             this.m_BoutonRentrer.Name = "m_BoutonRentrer";
             this.m_BoutonRentrer.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonRentrer.TabIndex = 13;
@@ -193,12 +216,23 @@
             this.m_BoutonRentrer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonRentrer_MouseDown);
             this.m_BoutonRentrer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonRentrer_MouseUp);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(603, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 42);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Mode Manuel";
+            // 
             // Mode_Manu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1459, 655);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_BoutonRentrer);
             this.Controls.Add(this.m_BoutonSortir);
             this.Controls.Add(this.m_BoutonTri);
@@ -215,6 +249,7 @@
             this.Name = "Mode_Manu";
             this.Text = "Mode Manuel";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,5 +268,6 @@
         private System.Windows.Forms.Button m_BoutonTri;
         private System.Windows.Forms.Button m_BoutonSortir;
         private System.Windows.Forms.Button m_BoutonRentrer;
+        private System.Windows.Forms.Label label1;
     }
 }
