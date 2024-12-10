@@ -18,7 +18,10 @@ namespace SAE
         {
             Hide();
 
-            m_MENU.ShowDialog();
+            if (m_MENU.Visible)
+            {
+                m_MENU.BringToFront();
+            }
             this.Close();
 
         }

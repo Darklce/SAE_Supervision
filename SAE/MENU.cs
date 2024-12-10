@@ -10,6 +10,7 @@ namespace SAE
     public partial class MENU : Form
 
     {
+        public Mode_Auto m_Mode_Auto;  // Instance de la classe associée    
         public Mode_Manu m_Mode_Manu;  // Instance de la classe associée
 
         public Plc plc = new Plc(CpuType.S7300, "10.102.172.240", 0, 0);                            //declaration de l'automate
@@ -55,9 +56,10 @@ namespace SAE
 
         private void Bouton_Auto_Click(object sender, EventArgs e)
         {
-            Mode_Auto mode_Auto = new Mode_Auto();
+            m_Mode_Auto = new Mode_Auto();
+            m_Mode_Auto.m_MENU = this;
             this.Hide();
-            mode_Auto.ShowDialog();
+            m_Mode_Auto.ShowDialog();
             this.Show();
 
 

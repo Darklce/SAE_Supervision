@@ -15,9 +15,14 @@ namespace SAE
 
         private void Bouton_Retour_Click(object sender, EventArgs e)
         {
-            m_MENU.Show();
+            Hide();
             this.Close();
 
+            if (m_MENU.Visible)
+            {
+                m_MENU.BringToFront();
+            }
+ 
         }
 
 
