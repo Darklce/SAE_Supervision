@@ -1,0 +1,73 @@
+
+<html>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01Transitional//EN">
+
+<!-- AWP_In_Variable Name='I_gauche_web' -->
+<!-- AWP_In_Variable Name='I_droite_web' -->
+<!-- AWP_In_Variable Name='I_monter_web' -->
+<!-- AWP_In_Variable Name='I_descendre_web' -->
+
+
+    <head>
+        <script>
+            function dep_droite_mousedown(){
+                document.getElementById('I_droite_web').value = "1";
+                document.forms["mon_form"].submit();
+            }                    
+			
+			function dep_gauche_mousedown(){
+                document.getElementById('I_gauche_web').value = "1";
+                document.forms["mon_form"].submit();
+            }                     
+			
+			function dep_monter_mousedown(){
+                document.getElementById('I_monter_web').value = "1";
+                document.forms["mon_form"].submit();
+            }           
+			
+			function dep_descendre_mousedown(){
+                document.getElementById('I_descendre_web').value = "1";
+                document.forms["mon_form"].submit();
+            }           
+            function raz_mouseup(){
+                  document.getElementById('I_droite_web').value = "0";
+				  document.getElementById('I_gauche_web').value = "0";
+				  document.getElementById('I_monter_web').value = "0";
+				  document.getElementById('I_descendre_web').value = "0";
+                  document.forms["mon_form"].submit();
+            }
+        </script>
+    </head>
+
+
+    <body>
+  <h1 align = "center"> Architecture client-Serveur </h1>
+
+            <form name="mon_form" method="post" action="">
+            <input type="hidden" name='I_droite_web'  id='I_droite_web'>
+			<input type="hidden" name='I_gauche_web'  id='I_gauche_web'>
+			  <input type="hidden" name='I_monter_web'  id='I_monter_web'>
+			<input type="hidden" name='I_descendre_web'  id='I_descendre_web'>
+            </form> 
+            
+			<table border ="2" align = "center">
+			<tr>
+			<td>
+            <BUTTON style="height:40px;width:250px" onmousedown="dep_droite_mousedown()" onmouseup="raz_mouseup()"> deplacement A droite </BUTTON>
+			</td>
+			<td>
+			<BUTTON style="height:40px;width:250px" onmousedown="dep_gauche_mousedown()" onmouseup="raz_mouseup()"> deplacement A gauche </BUTTON>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			<BUTTON style="height:40px;width:250px" onmousedown="dep_monter_mousedown()" onmouseup="raz_mouseup()"> deplacement en haut</BUTTON>
+			</td>
+			<td>
+			<BUTTON style="height:40px;width:250px" onmousedown="dep_descendre_mousedown()" onmouseup="raz_mouseup()"> deplacement en bas </BUTTON>
+			</td>
+			</tr>
+			</table>
+    </body>
+</html>
