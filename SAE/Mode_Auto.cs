@@ -25,8 +25,6 @@ namespace SAE
  
         }
 
-
-
         private void m_BoutonAU_MouseDown(object sender, MouseEventArgs e)
         {
             m_MENU.plc.Write("M1.3", 1);
@@ -137,6 +135,5 @@ namespace SAE
 
             }
         }
-
     }
 }

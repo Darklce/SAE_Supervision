@@ -31,6 +31,7 @@
             this.m_BoutonRetour = new System.Windows.Forms.Button();
             this.m_BoutonDCY = new System.Windows.Forms.Button();
             this.m_BoutonAU = new System.Windows.Forms.Button();
+            this.m_label_debug = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_BoutonRetour
@@ -53,6 +54,8 @@
             this.m_BoutonDCY.TabIndex = 1;
             this.m_BoutonDCY.Text = "Depart Cycle ";
             this.m_BoutonDCY.UseVisualStyleBackColor = false;
+            this.m_BoutonDCY.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonDCY_MouseDown);
+            this.m_BoutonDCY.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonDCY_MouseUp);
             // 
             // m_BoutonAU
             // 
@@ -64,18 +67,29 @@
             this.m_BoutonAU.Text = "ARRET URGENCE";
             this.m_BoutonAU.UseVisualStyleBackColor = false;
             // 
+            // m_label_debug
+            // 
+            this.m_label_debug.AutoSize = true;
+            this.m_label_debug.Location = new System.Drawing.Point(318, 66);
+            this.m_label_debug.Name = "m_label_debug";
+            this.m_label_debug.Size = new System.Drawing.Size(45, 13);
+            this.m_label_debug.TabIndex = 3;
+            this.m_label_debug.Text = "DEBUG";
+            // 
             // Mode_Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(775, 468);
+            this.Controls.Add(this.m_label_debug);
             this.Controls.Add(this.m_BoutonAU);
             this.Controls.Add(this.m_BoutonDCY);
             this.Controls.Add(this.m_BoutonRetour);
             this.Name = "Mode_Auto";
             this.Text = "Mode Automatique ";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,5 +98,6 @@
         private System.Windows.Forms.Button m_BoutonRetour;
         private System.Windows.Forms.Button m_BoutonDCY;
         private System.Windows.Forms.Button m_BoutonAU;
+        private System.Windows.Forms.Label m_label_debug;
     }
 }
