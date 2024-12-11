@@ -135,5 +135,10 @@ namespace SAE
 
             }
         }
+
+        private void Mode_Auto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace SAE
     {
         public Mode_Auto m_Mode_Auto;  // Instance de la classe associée    
         public Mode_Manu m_Mode_Manu;  // Instance de la classe associée
-
+        public Mode_Manu_P2 m_Mode_Manu_P2;  // Instance de la classe associée
         public Plc plc = new Plc(CpuType.S7300, "10.102.172.240", 0, 0);    //déclaration de l'automate
         public Plc plc2 = new Plc(CpuType.S7300, "10.102.172.239", 0, 0);
         public Plc plc3= new Plc(CpuType.S7300, "10.102.172.241", 0, 0);
@@ -107,6 +107,16 @@ namespace SAE
         {
             comboBox1.SelectedItem.ToString();
             m_label_ip_choose.Text = comboBox1.SelectedItem.ToString();
+        }
+
+        private void m_BoutonManuP2_Click(object sender, EventArgs e)
+        {
+            m_Mode_Manu_P2 = new Mode_Manu_P2();
+            m_Mode_Manu.m_MENU = this; // Assurez-vous de lier l'instance de MENU à Mode_Manu
+
+            this.Hide();
+            m_Mode_Manu_P2.ShowDialog();
+            this.Show();
         }
     }
 }

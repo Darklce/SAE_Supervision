@@ -37,6 +37,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.m_button_select_ip = new System.Windows.Forms.Button();
             this.m_label_ip_choose = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.m_BoutonManuP2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // m_BoutonAuto
@@ -44,6 +46,7 @@
             this.m_BoutonAuto.BackColor = System.Drawing.Color.SeaGreen;
             this.m_BoutonAuto.FlatAppearance.BorderSize = 0;
             this.m_BoutonAuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_BoutonAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_BoutonAuto.Location = new System.Drawing.Point(191, 118);
             this.m_BoutonAuto.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonAuto.Name = "m_BoutonAuto";
@@ -57,12 +60,13 @@
             // 
             this.m_BoutonManu.BackColor = System.Drawing.Color.DarkCyan;
             this.m_BoutonManu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_BoutonManu.Location = new System.Drawing.Point(639, 118);
+            this.m_BoutonManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonManu.Location = new System.Drawing.Point(731, 118);
             this.m_BoutonManu.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonManu.Name = "m_BoutonManu";
             this.m_BoutonManu.Size = new System.Drawing.Size(229, 102);
             this.m_BoutonManu.TabIndex = 1;
-            this.m_BoutonManu.Text = "Mode Manuel";
+            this.m_BoutonManu.Text = "Mode Manuel P3";
             this.m_BoutonManu.UseVisualStyleBackColor = false;
             this.m_BoutonManu.Click += new System.EventHandler(this.Bouton_Manu_Click);
             // 
@@ -70,10 +74,11 @@
             // 
             this.m_BoutonConnecter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.m_BoutonConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_BoutonConnecter.Location = new System.Drawing.Point(120, 390);
+            this.m_BoutonConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonConnecter.Location = new System.Drawing.Point(112, 390);
             this.m_BoutonConnecter.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonConnecter.Name = "m_BoutonConnecter";
-            this.m_BoutonConnecter.Size = new System.Drawing.Size(116, 94);
+            this.m_BoutonConnecter.Size = new System.Drawing.Size(124, 94);
             this.m_BoutonConnecter.TabIndex = 2;
             this.m_BoutonConnecter.Text = "Connexion";
             this.m_BoutonConnecter.UseVisualStyleBackColor = false;
@@ -83,10 +88,11 @@
             // 
             this.m_BoutonDeconnecter.BackColor = System.Drawing.Color.Red;
             this.m_BoutonDeconnecter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_BoutonDeconnecter.Location = new System.Drawing.Point(264, 390);
+            this.m_BoutonDeconnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonDeconnecter.Location = new System.Drawing.Point(255, 390);
             this.m_BoutonDeconnecter.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonDeconnecter.Name = "m_BoutonDeconnecter";
-            this.m_BoutonDeconnecter.Size = new System.Drawing.Size(116, 94);
+            this.m_BoutonDeconnecter.Size = new System.Drawing.Size(125, 94);
             this.m_BoutonDeconnecter.TabIndex = 3;
             this.m_BoutonDeconnecter.Text = "Déconnexion";
             this.m_BoutonDeconnecter.UseVisualStyleBackColor = false;
@@ -115,6 +121,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "10.102.172.239",
@@ -122,15 +129,16 @@
             "10.102.172.241"});
             this.comboBox1.Location = new System.Drawing.Point(402, 411);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 6;
             this.comboBox1.Tag = "m_val_ip";
             // 
             // m_button_select_ip
             // 
-            this.m_button_select_ip.Location = new System.Drawing.Point(406, 441);
+            this.m_button_select_ip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_button_select_ip.Location = new System.Drawing.Point(402, 445);
             this.m_button_select_ip.Name = "m_button_select_ip";
-            this.m_button_select_ip.Size = new System.Drawing.Size(110, 23);
+            this.m_button_select_ip.Size = new System.Drawing.Size(121, 28);
             this.m_button_select_ip.TabIndex = 7;
             this.m_button_select_ip.Text = "Sélectionner";
             this.m_button_select_ip.UseVisualStyleBackColor = true;
@@ -139,18 +147,48 @@
             // m_label_ip_choose
             // 
             this.m_label_ip_choose.AutoSize = true;
+            this.m_label_ip_choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_label_ip_choose.Location = new System.Drawing.Point(212, 361);
             this.m_label_ip_choose.Name = "m_label_ip_choose";
-            this.m_label_ip_choose.Size = new System.Drawing.Size(73, 16);
+            this.m_label_ip_choose.Size = new System.Drawing.Size(97, 22);
             this.m_label_ip_choose.TabIndex = 8;
             this.m_label_ip_choose.Text = "Adresse IP";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(731, 371);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 102);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Mode Manuel P1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // m_BoutonManuP2
+            // 
+            this.m_BoutonManuP2.BackColor = System.Drawing.Color.DarkCyan;
+            this.m_BoutonManuP2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_BoutonManuP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonManuP2.Location = new System.Drawing.Point(731, 246);
+            this.m_BoutonManuP2.Margin = new System.Windows.Forms.Padding(4);
+            this.m_BoutonManuP2.Name = "m_BoutonManuP2";
+            this.m_BoutonManuP2.Size = new System.Drawing.Size(229, 102);
+            this.m_BoutonManuP2.TabIndex = 10;
+            this.m_BoutonManuP2.Text = "Mode Manuel P2";
+            this.m_BoutonManuP2.UseVisualStyleBackColor = false;
+            this.m_BoutonManuP2.Click += new System.EventHandler(this.m_BoutonManuP2_Click);
             // 
             // MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1179, 631);
+            this.Controls.Add(this.m_BoutonManuP2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.m_label_ip_choose);
             this.Controls.Add(this.m_button_select_ip);
             this.Controls.Add(this.comboBox1);
@@ -179,6 +217,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button m_button_select_ip;
         private System.Windows.Forms.Label m_label_ip_choose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button m_BoutonManuP2;
     }
 }
 
