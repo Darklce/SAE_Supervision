@@ -31,7 +31,6 @@
             this.m_BoutonRetour = new System.Windows.Forms.Button();
             this.m_BoutonDCY = new System.Windows.Forms.Button();
             this.m_BoutonAU = new System.Windows.Forms.Button();
-            this.m_label_debug = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_BoutonRetour
@@ -66,15 +65,8 @@
             this.m_BoutonAU.TabIndex = 2;
             this.m_BoutonAU.Text = "ARRET URGENCE";
             this.m_BoutonAU.UseVisualStyleBackColor = false;
-            // 
-            // m_label_debug
-            // 
-            this.m_label_debug.AutoSize = true;
-            this.m_label_debug.Location = new System.Drawing.Point(318, 66);
-            this.m_label_debug.Name = "m_label_debug";
-            this.m_label_debug.Size = new System.Drawing.Size(45, 13);
-            this.m_label_debug.TabIndex = 3;
-            this.m_label_debug.Text = "DEBUG";
+            this.m_BoutonAU.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_BoutonAU_MouseDown);
+            this.m_BoutonAU.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_BoutonAU_MouseUp);
             // 
             // Mode_Auto
             // 
@@ -82,14 +74,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(775, 468);
-            this.Controls.Add(this.m_label_debug);
             this.Controls.Add(this.m_BoutonAU);
             this.Controls.Add(this.m_BoutonDCY);
             this.Controls.Add(this.m_BoutonRetour);
             this.Name = "Mode_Auto";
             this.Text = "Mode Automatique ";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -98,6 +88,5 @@
         private System.Windows.Forms.Button m_BoutonRetour;
         private System.Windows.Forms.Button m_BoutonDCY;
         private System.Windows.Forms.Button m_BoutonAU;
-        private System.Windows.Forms.Label m_label_debug;
     }
 }
