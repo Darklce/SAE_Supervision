@@ -42,21 +42,29 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.m_BoutonConnecter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // m_BoutonAuto
             // 
-            this.m_BoutonAuto.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.m_BoutonAuto.BackColor = System.Drawing.Color.LightSkyBlue;
             this.m_BoutonAuto.FlatAppearance.BorderSize = 0;
             this.m_BoutonAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.m_BoutonAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonAuto.Location = new System.Drawing.Point(280, 91);
-            this.m_BoutonAuto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.m_BoutonAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_BoutonAuto.ForeColor = System.Drawing.Color.Cornsilk;
+            this.m_BoutonAuto.Location = new System.Drawing.Point(274, 122);
+            this.m_BoutonAuto.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonAuto.Name = "m_BoutonAuto";
-            this.m_BoutonAuto.Size = new System.Drawing.Size(261, 84);
+            this.m_BoutonAuto.Size = new System.Drawing.Size(343, 126);
             this.m_BoutonAuto.TabIndex = 0;
             this.m_BoutonAuto.Text = "Mode Automatique ";
             this.m_BoutonAuto.UseVisualStyleBackColor = false;
@@ -64,14 +72,15 @@
             // 
             // m_BoutonManu
             // 
-            this.m_BoutonManu.BackColor = System.Drawing.Color.DarkCyan;
+            this.m_BoutonManu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.m_BoutonManu.FlatAppearance.BorderSize = 0;
             this.m_BoutonManu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_BoutonManu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonManu.Location = new System.Drawing.Point(1063, 440);
-            this.m_BoutonManu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.m_BoutonManu.ForeColor = System.Drawing.Color.Cornsilk;
+            this.m_BoutonManu.Location = new System.Drawing.Point(1432, 124);
+            this.m_BoutonManu.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonManu.Name = "m_BoutonManu";
-            this.m_BoutonManu.Size = new System.Drawing.Size(229, 102);
+            this.m_BoutonManu.Size = new System.Drawing.Size(283, 126);
             this.m_BoutonManu.TabIndex = 1;
             this.m_BoutonManu.Text = "Mode Manuel P3";
             this.m_BoutonManu.UseVisualStyleBackColor = false;
@@ -79,28 +88,30 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1063, 94);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button1.Location = new System.Drawing.Point(677, 124);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 102);
+            this.button1.Size = new System.Drawing.Size(284, 126);
             this.button1.TabIndex = 9;
             this.button1.Text = "Mode Manuel P1";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // m_BoutonManuP2
             // 
-            this.m_BoutonManuP2.BackColor = System.Drawing.Color.DarkCyan;
+            this.m_BoutonManuP2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.m_BoutonManuP2.FlatAppearance.BorderSize = 0;
             this.m_BoutonManuP2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_BoutonManuP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonManuP2.Location = new System.Drawing.Point(1063, 269);
-            this.m_BoutonManuP2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.m_BoutonManuP2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.m_BoutonManuP2.Location = new System.Drawing.Point(1060, 124);
+            this.m_BoutonManuP2.Margin = new System.Windows.Forms.Padding(4);
             this.m_BoutonManuP2.Name = "m_BoutonManuP2";
-            this.m_BoutonManuP2.Size = new System.Drawing.Size(229, 102);
+            this.m_BoutonManuP2.Size = new System.Drawing.Size(283, 126);
             this.m_BoutonManuP2.TabIndex = 10;
             this.m_BoutonManuP2.Text = "Mode Manuel P2";
             this.m_BoutonManuP2.UseVisualStyleBackColor = false;
@@ -108,7 +119,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -145,7 +156,7 @@
             this.m_label_ip_choose.AutoSize = true;
             this.m_label_ip_choose.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.m_label_ip_choose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_label_ip_choose.Location = new System.Drawing.Point(62, 652);
+            this.m_label_ip_choose.Location = new System.Drawing.Point(52, 631);
             this.m_label_ip_choose.Name = "m_label_ip_choose";
             this.m_label_ip_choose.Size = new System.Drawing.Size(97, 22);
             this.m_label_ip_choose.TabIndex = 8;
@@ -153,9 +164,9 @@
             // 
             // m_button_select_ip
             // 
-            this.m_button_select_ip.BackColor = System.Drawing.Color.Chocolate;
+            this.m_button_select_ip.BackColor = System.Drawing.Color.FloralWhite;
             this.m_button_select_ip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_button_select_ip.Location = new System.Drawing.Point(20, 593);
+            this.m_button_select_ip.Location = new System.Drawing.Point(14, 593);
             this.m_button_select_ip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_button_select_ip.Name = "m_button_select_ip";
             this.m_button_select_ip.Size = new System.Drawing.Size(176, 32);
@@ -181,7 +192,7 @@
             "10.102.172.239",
             "10.102.172.240",
             "10.102.172.241"});
-            this.comboBox1.Location = new System.Drawing.Point(30, 561);
+            this.comboBox1.Location = new System.Drawing.Point(21, 561);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 28);
@@ -205,7 +216,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.m_BoutonDeconnecter);
             this.panel1.Controls.Add(this.m_button_select_ip);
             this.panel1.Controls.Add(this.m_BoutonConnecter);
@@ -219,26 +230,73 @@
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.Cursor = System.Windows.Forms.Cursors.No;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(656, 822);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1120, 32);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Supervision : Thomas GUILLERME, Esteban LEOCARD, Apoline FLAN, Rayen LAJNEF";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1432, 261);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(283, 503);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1059, 261);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(284, 503);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(677, 261);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(283, 503);
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
             // MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1788, 863);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_BoutonManuP2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.m_BoutonManu);
             this.Controls.Add(this.m_BoutonAuto);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MENU";
             this.Text = "Menu Principal ";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,6 +315,10 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button m_BoutonConnecter;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
