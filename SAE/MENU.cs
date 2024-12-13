@@ -120,5 +120,15 @@ namespace SAE
             m_Mode_Manu_P2.ShowDialog();
             this.Show();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
