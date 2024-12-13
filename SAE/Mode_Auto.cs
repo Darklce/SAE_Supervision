@@ -15,6 +15,7 @@ namespace SAE
 
         private void Bouton_Retour_Click(object sender, EventArgs e)
         {
+            m_MENU.plc.Write("40.1", 0);
             Hide();
             this.Close();
 

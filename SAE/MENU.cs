@@ -72,6 +72,7 @@ namespace SAE
         {
             m_Mode_Auto = new Mode_Auto();
             m_Mode_Auto.m_MENU = this;
+            plc.Write("M40.1", 1);
             this.Hide();
             m_Mode_Auto.ShowDialog();
             this.Show();
