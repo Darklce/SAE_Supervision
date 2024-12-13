@@ -87,6 +87,7 @@ namespace SAE
 
         private void Bouton_Manu_Click(object sender, EventArgs e)
         {
+            plc.Write("M4.0", 1);
             m_Mode_Manu = new Mode_Manu();
             m_Mode_Manu.m_MENU = this; // Assurez-vous de lier l'instance de MENU à Mode_Manu
 

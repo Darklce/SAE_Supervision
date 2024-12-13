@@ -17,6 +17,7 @@ namespace SAE
         private void Bouton_Retour_Click(object sender, EventArgs e)
         {
             Hide();
+            m_MENU.plc.Write("M4.0", 0);
 
             if (m_MENU.Visible)
             {
