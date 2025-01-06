@@ -65,11 +65,37 @@ namespace SAE
             // Dessiner un cercle
             Graphics g = e.Graphics;
             Brush brush = new SolidBrush(Circle_Color);
-            int x = 200; // Position X du cercle
-            int y = 100; // Position Y du cercle
-            int width = 50; // Largeur du cercle
-            int height = 50; // Hauteur du cercle
+            int x = 250; // Position X du cercle
+            int y = 400; // Position Y du cercle
+            int width = 40; // Largeur du cercle
+            int height = 40; // Hauteur du cercle
 
+            // Dessiner un bâton qui réprésente le bras en mouvement vers le haut
+            Pen pen = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
+            int startX = 500; // Position X de départ du bâton
+            int startY = 450; // Position Y de départ du bâton
+            int endX = 500; // Position X de fin du bâton
+            int endY = 250; // Position Y de fin du bâton
+
+            // Dessiner un bâton qui réprésente le bras en mouvement vers le magasin
+
+            Pen pen1 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
+            int startX1 = 250; // Position X de départ du bâton
+            int startY1 = 450; // Position Y de départ du bâton
+            int endX1 = 500; // Position X de fin du bâton
+            int endY1 = 450; // Position Y de fin du bâton
+
+            // Dessiner un bâton qui réprésente le bras en mouvement vers l'ascenceur
+
+            Pen pen2 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
+            int startX2 = 500; // Position X de départ du bâton
+            int startY2 = 450; // Position Y de départ du bâton
+            int endX2 = 750; // Position X de fin du bâton
+            int endY2 = 450; // Position Y de fin du bâton
+
+            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton
+            g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
+            g.DrawLine(pen, startX, startY, endX, endY); // Dessiner le bâton
             g.FillEllipse(brush, x, y, width, height);
         }
         private void UpdateCircleColorFromPLC()
@@ -87,13 +113,13 @@ namespace SAE
                 Circle_Color = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
             }
 
+
             Invalidate(); // Redessiner le formulaire
         }
 
         private void m_button_test_UP(object sender, MouseEventArgs e)
         {
             l_bool_test = true;
-            m_label_2.Text = l_bool_test.ToString();
             UpdateCircleColorFromPLC();
 
         }
@@ -101,7 +127,6 @@ namespace SAE
         private void m_button_test_down(object sender, MouseEventArgs e)
         {
             l_bool_test = false;
-            m_label_2.Text = l_bool_test.ToString();
             UpdateCircleColorFromPLC();
 
         }

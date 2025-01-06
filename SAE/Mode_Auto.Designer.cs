@@ -96,7 +96,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Chocolate;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(568, 55);
             this.pictureBox1.TabIndex = 14;
@@ -105,7 +105,7 @@
             // m_label_2
             // 
             this.m_label_2.AutoSize = true;
-            this.m_label_2.Location = new System.Drawing.Point(520, 274);
+            this.m_label_2.Location = new System.Drawing.Point(291, 107);
             this.m_label_2.Name = "m_label_2";
             this.m_label_2.Size = new System.Drawing.Size(35, 13);
             this.m_label_2.TabIndex = 16;
@@ -113,11 +113,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(499, 223);
+            this.button2.Location = new System.Drawing.Point(271, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
+            this.button2.Text = "BUTTON DEBUG";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_button_test_down);
             this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_button_test_UP);
@@ -127,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1338, 755);
+            this.ClientSize = new System.Drawing.Size(1384, 761);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.m_label_2);
             this.Controls.Add(this.pictureBox1);
