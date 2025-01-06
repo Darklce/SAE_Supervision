@@ -33,11 +33,13 @@
             this.m_BoutonDCY = new System.Windows.Forms.Button();
             this.m_BoutonAU = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_label_2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_label_test = new System.Windows.Forms.Label();
+            this.m_label_droite_test = new System.Windows.Forms.Label();
+            this.m_label_2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,20 +97,11 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "MODE AUTOMATIQUE";
             // 
-            // m_label_2
-            // 
-            this.m_label_2.AutoSize = true;
-            this.m_label_2.Location = new System.Drawing.Point(1303, 120);
-            this.m_label_2.Name = "m_label_2";
-            this.m_label_2.Size = new System.Drawing.Size(35, 13);
-            this.m_label_2.TabIndex = 16;
-            this.m_label_2.Text = "label2";
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1283, 143);
+            this.button2.Location = new System.Drawing.Point(1230, 138);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(142, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "BUTTON DEBUG";
             this.button2.UseVisualStyleBackColor = true;
@@ -149,12 +142,45 @@
             this.panel2.Size = new System.Drawing.Size(1384, 54);
             this.panel2.TabIndex = 19;
             // 
+            // m_label_test
+            // 
+            this.m_label_test.AutoSize = true;
+            this.m_label_test.BackColor = System.Drawing.Color.Black;
+            this.m_label_test.Location = new System.Drawing.Point(269, 441);
+            this.m_label_test.Name = "m_label_test";
+            this.m_label_test.Size = new System.Drawing.Size(229, 13);
+            this.m_label_test.TabIndex = 20;
+            this.m_label_test.Text = "                                                                          ";
+            this.m_label_test.VisibleChanged += new System.EventHandler(this.m_button_test);
+            this.m_label_test.Click += new System.EventHandler(this.m_label_test_Click);
+            // 
+            // m_label_droite_test
+            // 
+            this.m_label_droite_test.AutoSize = true;
+            this.m_label_droite_test.BackColor = System.Drawing.Color.Black;
+            this.m_label_droite_test.Location = new System.Drawing.Point(495, 441);
+            this.m_label_droite_test.Name = "m_label_droite_test";
+            this.m_label_droite_test.Size = new System.Drawing.Size(229, 13);
+            this.m_label_droite_test.TabIndex = 21;
+            this.m_label_droite_test.Text = "                                                                          ";
+            // 
+            // m_label_2
+            // 
+            this.m_label_2.AutoSize = true;
+            this.m_label_2.Location = new System.Drawing.Point(1303, 120);
+            this.m_label_2.Name = "m_label_2";
+            this.m_label_2.Size = new System.Drawing.Size(35, 13);
+            this.m_label_2.TabIndex = 16;
+            this.m_label_2.Text = "label2";
+            // 
             // Mode_Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1384, 761);
+            this.Controls.Add(this.m_label_droite_test);
+            this.Controls.Add(this.m_label_test);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
@@ -180,10 +206,12 @@
         private System.Windows.Forms.Button m_BoutonAU;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label m_label_2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label m_label_test;
+        private System.Windows.Forms.Label m_label_droite_test;
+        private System.Windows.Forms.Label m_label_2;
     }
 }

@@ -11,6 +11,8 @@ namespace SAE
         public MENU m_MENU;
         private Color Circle_Color = Color.Red; // Variable de couleur pour le cercle
         bool l_bool_test = false;
+        private bool showStick1 = true; // Variable pour contrôler la visibilité du premier bâton
+
 
         public Mode_Auto()
         {
@@ -60,6 +62,7 @@ namespace SAE
         {
 
         }
+
         private void Mode_Auto_Paint(object sender, PaintEventArgs e)
         {
             // Dessiner un cercle
@@ -78,45 +81,51 @@ namespace SAE
             int endY = 250; // Position Y de fin du bâton
 
             // Dessiner un bâton qui réprésente le bras en mouvement vers le magasin
-
-            Pen pen1 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
-            int startX1 = 250; // Position X de départ du bâton
-            int startY1 = 450; // Position Y de départ du bâton
-            int endX1 = 500; // Position X de fin du bâton
-            int endY1 = 450; // Position Y de fin du bâton
-
+            /*
+                        Pen pen1 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
+                        int startX1 = 250; // Position X de départ du bâton
+                        int startY1 = 450; // Position Y de départ du bâton
+                        int endX1 = 500; // Position X de fin du bâton
+                        int endY1 = 450; // Position Y de fin du bâton
+            */
             // Dessiner un bâton qui réprésente le bras en mouvement vers l'ascenceur
-
-            Pen pen2 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
-            int startX2 = 500; // Position X de départ du bâton
-            int startY2 = 450; // Position Y de départ du bâton
-            int endX2 = 750; // Position X de fin du bâton
-            int endY2 = 450; // Position Y de fin du bâton
-
+            /*
+                        Pen pen2 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
+                        int startX2 = 500; // Position X de départ du bâton
+                        int startY2 = 450; // Position Y de départ du bâton
+                        int endX2 = 750; // Position X de fin du bâton
+                        int endY2 = 450; // Position Y de fin du bâton
+            */
             //l_bool_test = Convert.ToBoolean(m_MENU.plc.Read("M1.4"));
-/*
-            if (l_bool_test == true)
-            {
-            g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
+            /*
+                        if (l_bool_test == true)
+                        {
+                        g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
 
-                Invalidate(); // Redessiner le formulaire
+                            Invalidate(); // Redessiner le formulaire
 
-            }
-            else if (l_bool_test == false)
-            {
-                g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
-                Invalidate(); // Redessiner le formulaire
+                        }
+                        else if (l_bool_test == false)
+                        {
+                            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
+                            Invalidate(); // Redessiner le formulaire
 
-            }
-*/
-
-            g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
-            g.DrawLine(pen, startX, startY, endX, endY); // Dessiner le bâton
-            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
+                        }
+            */
+            //g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
+            //g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
 
             // Dessiner le capteur 1 :
-            g.FillEllipse(brush, x, y, width, height);
+
+         if (showStick1) {
+            g.DrawLine(pen, startX, startY, endX, endY); // Dessiner le bâton
+
         }
+            g.FillEllipse(brush, x, y, width, height);
+
+        }
+
+
         private void UpdateCircleColorFromPLC()
         {
             // Lire une valeur du PLC
@@ -140,6 +149,10 @@ namespace SAE
         {
             l_bool_test = true;
             UpdateCircleColorFromPLC();
+            m_label_test.Visible = false;
+            m_label_droite_test.Visible = false;
+            SetStick1Visibility(false);
+
 
         }
 
@@ -147,7 +160,26 @@ namespace SAE
         {
             l_bool_test = false;
             UpdateCircleColorFromPLC();
+            m_label_test.Visible = true;
+            m_label_droite_test.Visible = true;
+            SetStick1Visibility(true);
 
+
+
+        }
+        private void m_button_test(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_label_test_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void SetStick1Visibility(bool visible)
+        {
+            showStick1 = visible;
+            Invalidate(); // Redessiner le formulaire
         }
     }
 }
