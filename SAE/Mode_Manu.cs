@@ -13,7 +13,7 @@ namespace SAE
 
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void Bouton_Retour_Click(object sender, EventArgs e)
@@ -163,8 +163,64 @@ namespace SAE
             m_MENU.plc.Write("M1.0", 0); // Turn off the output
         }
 
-        
+        private void m_BoutonRentrer_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void m_BoutonSortir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonTri_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonUsin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonPalp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonSortirNoir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonSortirRouge_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonSaisir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonAU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonLacher_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_BoutonTapis_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

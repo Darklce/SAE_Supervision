@@ -16,7 +16,7 @@ namespace SAE
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             this.Paint += new PaintEventHandler(Mode_Auto_Paint);
             this.Load += new EventHandler(Mode_Auto_Load);
 
@@ -93,9 +93,28 @@ namespace SAE
             int endX2 = 750; // Position X de fin du bâton
             int endY2 = 450; // Position Y de fin du bâton
 
-            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton
+            //l_bool_test = Convert.ToBoolean(m_MENU.plc.Read("M1.4"));
+/*
+            if (l_bool_test == true)
+            {
+            g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
+
+                Invalidate(); // Redessiner le formulaire
+
+            }
+            else if (l_bool_test == false)
+            {
+                g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
+                Invalidate(); // Redessiner le formulaire
+
+            }
+*/
+
             g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
             g.DrawLine(pen, startX, startY, endX, endY); // Dessiner le bâton
+            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
+
+            // Dessiner le capteur 1 :
             g.FillEllipse(brush, x, y, width, height);
         }
         private void UpdateCircleColorFromPLC()
