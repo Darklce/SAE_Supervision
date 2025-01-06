@@ -34,6 +34,8 @@
             this.m_BoutonAU = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.m_label_2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +44,9 @@
             this.m_BoutonRetour.BackColor = System.Drawing.Color.DarkSlateGray;
             this.m_BoutonRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_BoutonRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonRetour.Location = new System.Drawing.Point(33, 448);
-            this.m_BoutonRetour.Margin = new System.Windows.Forms.Padding(4);
+            this.m_BoutonRetour.Location = new System.Drawing.Point(25, 344);
             this.m_BoutonRetour.Name = "m_BoutonRetour";
-            this.m_BoutonRetour.Size = new System.Drawing.Size(215, 80);
+            this.m_BoutonRetour.Size = new System.Drawing.Size(161, 65);
             this.m_BoutonRetour.TabIndex = 0;
             this.m_BoutonRetour.Text = "RETOUR";
             this.m_BoutonRetour.UseVisualStyleBackColor = false;
@@ -53,13 +54,12 @@
             // 
             // m_BoutonDCY
             // 
-            this.m_BoutonDCY.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.m_BoutonDCY.BackColor = System.Drawing.Color.Turquoise;
             this.m_BoutonDCY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_BoutonDCY.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonDCY.Location = new System.Drawing.Point(388, 218);
-            this.m_BoutonDCY.Margin = new System.Windows.Forms.Padding(4);
+            this.m_BoutonDCY.Location = new System.Drawing.Point(24, 107);
             this.m_BoutonDCY.Name = "m_BoutonDCY";
-            this.m_BoutonDCY.Size = new System.Drawing.Size(216, 80);
+            this.m_BoutonDCY.Size = new System.Drawing.Size(162, 65);
             this.m_BoutonDCY.TabIndex = 1;
             this.m_BoutonDCY.Text = "Depart Cycle ";
             this.m_BoutonDCY.UseVisualStyleBackColor = false;
@@ -71,10 +71,9 @@
             this.m_BoutonAU.BackColor = System.Drawing.Color.Red;
             this.m_BoutonAU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_BoutonAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_BoutonAU.Location = new System.Drawing.Point(662, 381);
-            this.m_BoutonAU.Margin = new System.Windows.Forms.Padding(4);
+            this.m_BoutonAU.Location = new System.Drawing.Point(25, 211);
             this.m_BoutonAU.Name = "m_BoutonAU";
-            this.m_BoutonAU.Size = new System.Drawing.Size(284, 112);
+            this.m_BoutonAU.Size = new System.Drawing.Size(161, 91);
             this.m_BoutonAU.TabIndex = 2;
             this.m_BoutonAU.Text = "ARRET URGENCE";
             this.m_BoutonAU.UseVisualStyleBackColor = false;
@@ -85,9 +84,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 77);
+            this.label1.Location = new System.Drawing.Point(553, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 42);
+            this.label1.Size = new System.Drawing.Size(330, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "MODE AUTOMATIQUE";
             // 
@@ -95,24 +95,46 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Chocolate;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(575, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(568, 55);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // m_label_2
+            // 
+            this.m_label_2.AutoSize = true;
+            this.m_label_2.Location = new System.Drawing.Point(520, 274);
+            this.m_label_2.Name = "m_label_2";
+            this.m_label_2.Size = new System.Drawing.Size(35, 13);
+            this.m_label_2.TabIndex = 16;
+            this.m_label_2.Text = "label2";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(499, 223);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_button_test_down);
+            this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.m_button_test_UP);
+            // 
             // Mode_Auto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1033, 576);
+            this.ClientSize = new System.Drawing.Size(1338, 755);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.m_label_2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_BoutonAU);
             this.Controls.Add(this.m_BoutonDCY);
             this.Controls.Add(this.m_BoutonRetour);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Mode_Auto";
             this.Text = "Mode Automatique ";
             this.Load += new System.EventHandler(this.Mode_Auto_Load);
@@ -129,5 +151,8 @@
         private System.Windows.Forms.Button m_BoutonAU;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label m_label_2;
+        private System.Windows.Forms.Button button2;
     }
 }

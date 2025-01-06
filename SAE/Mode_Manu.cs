@@ -12,6 +12,8 @@ namespace SAE
         {
 
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Bouton_Retour_Click(object sender, EventArgs e)

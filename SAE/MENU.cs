@@ -17,8 +17,11 @@ namespace SAE
         public Plc plc2 = new Plc(CpuType.S7300, "10.102.172.239", 0, 0);
         public Plc plc3= new Plc(CpuType.S7300, "10.102.172.241", 0, 0);
         bool g_bool_connecte = false;
+       
         public MENU()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
         }
 
@@ -72,7 +75,7 @@ namespace SAE
         {
             m_Mode_Auto = new Mode_Auto();
             m_Mode_Auto.m_MENU = this;
-            plc.Write("M40.1", 1);
+            //plc.Write("M40.1", 1);
             this.Hide();
             m_Mode_Auto.ShowDialog();
             this.Show();
@@ -127,6 +130,11 @@ namespace SAE
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
