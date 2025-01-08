@@ -224,7 +224,7 @@ namespace SAE
 
                     }
                 }
-                
+                 
                 if ((l_bool_valid == true) && (m_label_eject.Location.X < maxPosition2))
                 {
                     m_label_eject.Location = new Point(m_label_eject.Location.X + labelSpeed, m_label_eject.Location.Y);    
