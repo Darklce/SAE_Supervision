@@ -206,19 +206,28 @@ namespace SAE
                 if (sensorState && label2.Location.Y < maxPosition)
                 {
                     label2.Location = new Point(label2.Location.X, label2.Location.Y + labelSpeed);
-                    l_bool_valid = false;
+                    if (label2.Location.Y == maxPosition)
+                    {
+                        l_bool_valid = false;
+
+                    }
 
                 }
                 // Si le capteur est désactivé (false), déplacer le label vers le haut
                 else if (!sensorState && label2.Location.Y > minPosition)
                 {
                     label2.Location = new Point(label2.Location.X, label2.Location.Y - labelSpeed);
-                    l_bool_valid = true;
 
+                    if (label2.Location.X == minPosition)
+                    {
+                        l_bool_valid = true;
+
+                    }
                 }
+                
                 if ((l_bool_valid == true) && (m_label_eject.Location.X < maxPosition2))
                 {
-                    m_label_eject.Location = new Point(m_label_eject.Location.X +labelSpeed, m_label_eject.Location.Y);    
+                    m_label_eject.Location = new Point(m_label_eject.Location.X + labelSpeed, m_label_eject.Location.Y);    
                 }
                 else if ((l_bool_valid == false) && (m_label_eject.Location.X > minPosition2))
                 {
