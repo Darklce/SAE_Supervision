@@ -11,22 +11,55 @@ namespace SAE
         public MENU m_MENU;
         private Color Circle_Color = Color.Red; // Variable de couleur pour le cercle
         bool l_bool_test = false;
-        private bool showStick1 = true; // Variable pour contrôler la visibilité du premier bâton
+        private object plc;
+        private int labelSpeed = 15; // Vitesse de déplacement du label
+        private int maxPosition = 530; // Position maximale vers le bas
+        private int minPosition = 300;  // Position initiale ou minimale
+        private int maxPosition2 = 370; // Position maximale vers la droite
+        private int minPosition2 = 300;  // Position initiale ou gauche
 
+        bool l_bool_valid = true;
+
+
+
+        bool sensorState = true;
+        private bool isMirrored = false; // Indique si l'image doit être inversée
+        private Timer rotationTimer; // Timer pour gérer l'inversion
 
         public Mode_Auto()
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             this.Paint += new PaintEventHandler(Mode_Auto_Paint);
             this.Load += new EventHandler(Mode_Auto_Load);
+            InitializeSensorControl();
+            InitializeMirroring();
+        }
+        private void InitializeMirroring()
+        {
+            // Initialiser le Timer pour vérifier l'état du capteur
+            rotationTimer = new Timer();
+            rotationTimer.Interval = 100; // Vérifie toutes les 100 ms
+            rotationTimer.Start();
+        }
+        private void InitializeSensorControl()
+        {
+            // Initialiser le Timer
+            timer1 = new Timer();
+            timer1.Interval = 50; // Vérifie toutes les 100 ms
+            timer1.Start();
 
+
+            // Initialiser la position du label
+            label2.Location = new Point(label2.Location.X, minPosition);
+            m_label_eject.Location = new Point(m_label_eject.Location.X, minPosition2);
+            
         }
 
         private void Bouton_Retour_Click(object sender, EventArgs e)
         {
-            m_MENU.plc.Write("40.1", 0);
+            m_MENU.plc.Write("M40.1", 0);
             Hide();
             this.Close();
 
@@ -49,13 +82,26 @@ namespace SAE
 
         private void m_BoutonDCY_MouseDown(object sender, MouseEventArgs e)
         {
-            m_MENU.plc.Write("M1.4", 1);
-
+            //m_MENU.plc.Write("M1.4", 1);
+            timer1.Tick += timer1_Tick;
+            //rotationTimer.Tick += timer2_Tick;
+/*
+            bool lirePres = Convert.ToBoolean(m_MENU.plc.Read("M1.4"));
+            if (lirePres == true)
+            {
+                UpdateCircleColorFromPLC();
+            }
+            else
+            {
+                UpdateCircleColorFromPLC();
+            }
+*/
         }
 
         private void m_BoutonDCY_MouseUp(object sender, MouseEventArgs e)
         {
-            m_MENU.plc.Write("M1.4", 0);
+           // m_MENU.plc.Write("M1.4", 0);
+            
         }
 
         private void Mode_Auto_Load(object sender, EventArgs e)
@@ -65,68 +111,38 @@ namespace SAE
 
         private void Mode_Auto_Paint(object sender, PaintEventArgs e)
         {
+
             // Dessiner un cercle
             Graphics g = e.Graphics;
             Brush brush = new SolidBrush(Circle_Color);
-            int x = 250; // Position X du cercle
-            int y = 400; // Position Y du cercle
+            int x = 400; // Position X du cercle
+            int y = 500; // Position Y du cercle
             int width = 40; // Largeur du cercle
             int height = 40; // Hauteur du cercle
 
-            // Dessiner un bâton qui réprésente le bras en mouvement vers le haut
-            Pen pen = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
-            int startX = 500; // Position X de départ du bâton
-            int startY = 450; // Position Y de départ du bâton
-            int endX = 500; // Position X de fin du bâton
-            int endY = 250; // Position Y de fin du bâton
-
-            // Dessiner un bâton qui réprésente le bras en mouvement vers le magasin
-            /*
-                        Pen pen1 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
-                        int startX1 = 250; // Position X de départ du bâton
-                        int startY1 = 450; // Position Y de départ du bâton
-                        int endX1 = 500; // Position X de fin du bâton
-                        int endY1 = 450; // Position Y de fin du bâton
-            */
-            // Dessiner un bâton qui réprésente le bras en mouvement vers l'ascenceur
-            /*
-                        Pen pen2 = new Pen(Color.Black, 15); // Créer un stylo noir avec une épaisseur de 15
-                        int startX2 = 500; // Position X de départ du bâton
-                        int startY2 = 450; // Position Y de départ du bâton
-                        int endX2 = 750; // Position X de fin du bâton
-                        int endY2 = 450; // Position Y de fin du bâton
-            */
-            //l_bool_test = Convert.ToBoolean(m_MENU.plc.Read("M1.4"));
-            /*
-                        if (l_bool_test == true)
-                        {
-                        g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
-
-                            Invalidate(); // Redessiner le formulaire
-
-                        }
-                        else if (l_bool_test == false)
-                        {
-                            g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
-                            Invalidate(); // Redessiner le formulaire
-
-                        }
-            */
-            //g.DrawLine(pen1, startX1, startY1, endX1, endY1); // Dessiner le bâton
-            //g.DrawLine(pen2, startX2, startY2, endX2, endY2); // Dessiner le bâton 
-
-            // Dessiner le capteur 1 :
-
-         if (showStick1) {
-            g.DrawLine(pen, startX, startY, endX, endY); // Dessiner le bâton
-
-        }
             g.FillEllipse(brush, x, y, width, height);
+            // Dessiner un cercle
+            Graphics g1 = e.Graphics;
+            Brush brush1 = new SolidBrush(Circle_Color);
+            int x1 = 400; // Position X du cercle
+            int y1 = 260; // Position Y du cercle
+            int width1 = 40; // Largeur du cercle
+            int height1 = 40; // Hauteur du cercle
 
-        }
+            g1.FillEllipse(brush1, x1, y1, width1, height1);
+            // Dessiner un cercle
+            Graphics g2 = e.Graphics;
+            Brush brush2 = new SolidBrush(Circle_Color);
+            int x2 = 600; // Position X du cercle
+            int y2 = 260; // Position Y du cercle
+            int width2 = 40; // Largeur du cercle
+            int height2 = 40; // Hauteur du cercle
 
+            g2.FillEllipse(brush2, x2, y2, width2, height2);
 
-        private void UpdateCircleColorFromPLC()
+        }  
+
+            private void UpdateCircleColorFromPLC()
         {
             // Lire une valeur du PLC
             bool plcValue = l_bool_test;//Convert.ToBoolean(m_MENU.plc.Read("I0.0")); // Exemple de lecture d'une entrée du PLC
@@ -149,37 +165,73 @@ namespace SAE
         {
             l_bool_test = true;
             UpdateCircleColorFromPLC();
-            m_label_test.Visible = false;
-            m_label_droite_test.Visible = false;
-            SetStick1Visibility(false);
-
-
+          
         }
 
         private void m_button_test_down(object sender, MouseEventArgs e)
         {
             l_bool_test = false;
             UpdateCircleColorFromPLC();
-            m_label_test.Visible = true;
-            m_label_droite_test.Visible = true;
-            SetStick1Visibility(true);
+            //m_label_test.Visible = true;
+            //m_label_droite_test.Visible = true;
 
 
 
         }
         private void m_button_test(object sender, EventArgs e)
         {
-
+            if (sensorState == true)
+            {
+                sensorState = false;
+            }
+            else if (sensorState == false)
+            {
+                sensorState = true;
+            }
         }
-
         private void m_label_test_Click(object sender, EventArgs e)
         {
 
         }
-        private void SetStick1Visibility(bool visible)
+
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            showStick1 = visible;
-            Invalidate(); // Redessiner le formulaire
+            try
+            {
+                // Lire l'état du capteur
+                //Convert.ToBoolean(m_MENU.plc.Read("I3.1")); // Exemple d'adresse du capteur
+
+                // Si le capteur est activé (true), déplacer le label vers le bas
+                if (sensorState && label2.Location.Y < maxPosition)
+                {
+                    label2.Location = new Point(label2.Location.X, label2.Location.Y + labelSpeed);
+                    l_bool_valid = false;
+
+                }
+                // Si le capteur est désactivé (false), déplacer le label vers le haut
+                else if (!sensorState && label2.Location.Y > minPosition)
+                {
+                    label2.Location = new Point(label2.Location.X, label2.Location.Y - labelSpeed);
+                    l_bool_valid = true;
+
+                }
+                if ((l_bool_valid == true) && (m_label_eject.Location.X < maxPosition2))
+                {
+                    m_label_eject.Location = new Point(m_label_eject.Location.X +labelSpeed, m_label_eject.Location.Y);    
+                }
+                else if ((l_bool_valid == false) && (m_label_eject.Location.X > minPosition2))
+                {
+                    m_label_eject.Location = new Point(m_label_eject.Location.X - labelSpeed, m_label_eject.Location.Y);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Gérer les erreurs de lecture depuis le PLC
+                MessageBox.Show($"Erreur de lecture depuis le PLC : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                timer1.Stop(); // Arrête le Timer en cas d'erreur
+            }
         }
     }
 }

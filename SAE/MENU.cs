@@ -13,9 +13,9 @@ namespace SAE
         public Mode_Auto m_Mode_Auto;  // Instance de la classe associée    
         public Mode_Manu m_Mode_Manu;  // Instance de la classe associée
         public Mode_Manu_P2 m_Mode_Manu_P2;  // Instance de la classe associée
-        public Plc plc = new Plc(CpuType.S7300, "10.102.172.240", 0, 0);    //déclaration de l'automate
+        public Plc plc = new Plc(CpuType.S7300, "10.102.172.238", 0, 0);    //déclaration de l'automate
         public Plc plc2 = new Plc(CpuType.S7300, "10.102.172.239", 0, 0);
-        public Plc plc3= new Plc(CpuType.S7300, "10.102.172.241", 0, 0);
+        public Plc plc3= new Plc(CpuType.S7300, "10.102.172.240", 0, 0);
         bool g_bool_connecte = false;
        
         public MENU()
@@ -29,7 +29,7 @@ namespace SAE
         {
             switch (m_label_ip_choose.Text)
             {
-                case "10.102.172.240":
+                case "10.102.172.238":
                     this.plc.Open();
                     break;
 
@@ -37,7 +37,7 @@ namespace SAE
                     this.plc2.Open();
                     break;
 
-                case "10.102.172.241":
+                case "10.102.172.240":
                     this.plc3.Open();
                     break;
             }
