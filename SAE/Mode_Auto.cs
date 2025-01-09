@@ -17,6 +17,7 @@ namespace SAE
         private int minPosition = 300;  // Position initiale ou minimale
         private int maxPosition2 = 370; // Position maximale vers la droite
         private int minPosition2 = 300;  // Position initiale ou gauche
+        
 
         bool l_bool_valid = true;
 
@@ -208,7 +209,7 @@ namespace SAE
                     label2.Location = new Point(label2.Location.X, label2.Location.Y + labelSpeed);
                     if (label2.Location.Y == maxPosition)
                     {
-                        l_bool_valid = false;
+                        l_bool_valid = true;
 
                     }
 
@@ -218,20 +219,23 @@ namespace SAE
                 {
                     label2.Location = new Point(label2.Location.X, label2.Location.Y - labelSpeed);
 
-                    if (label2.Location.X == minPosition)
+                    if (label2.Location.Y != maxPosition)
                     {
-                        l_bool_valid = true;
+                        l_bool_valid = false;
 
                     }
                 }
                  
                 if ((l_bool_valid == true) && (m_label_eject.Location.X < maxPosition2))
                 {
-                    m_label_eject.Location = new Point(m_label_eject.Location.X + labelSpeed, m_label_eject.Location.Y);    
+                    m_label_eject.Location = new Point(m_label_eject.Location.X + labelSpeed, m_label_eject.Location.Y); 
+                    m_label_3_debug.Text = Convert.ToString(m_label_eject.Location.X);
                 }
                 else if ((l_bool_valid == false) && (m_label_eject.Location.X > minPosition2))
                 {
                     m_label_eject.Location = new Point(m_label_eject.Location.X - labelSpeed, m_label_eject.Location.Y);
+                    m_label_debug.Text = Convert.ToString(label2.Location.Y);
+
                 }
 
             }

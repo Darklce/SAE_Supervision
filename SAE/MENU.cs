@@ -21,7 +21,7 @@ namespace SAE
         public MENU()
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
         }
 

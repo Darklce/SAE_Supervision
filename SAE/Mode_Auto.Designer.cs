@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.m_label_eject = new System.Windows.Forms.Label();
+            this.m_label_3_debug = new System.Windows.Forms.Label();
+            this.m_label_debug = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,7 +70,7 @@
             this.m_BoutonDCY.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_BoutonDCY.Location = new System.Drawing.Point(15, 115);
             this.m_BoutonDCY.Name = "m_BoutonDCY";
-            this.m_BoutonDCY.Size = new System.Drawing.Size(122, 55);
+            this.m_BoutonDCY.Size = new System.Drawing.Size(122, 68);
             this.m_BoutonDCY.TabIndex = 1;
             this.m_BoutonDCY.Text = "Depart Cycle ";
             this.m_BoutonDCY.UseVisualStyleBackColor = false;
@@ -102,9 +104,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1230, 138);
+            this.button2.Location = new System.Drawing.Point(1269, 136);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 23);
+            this.button2.Size = new System.Drawing.Size(105, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "BUTTON DEBUG";
             this.button2.UseVisualStyleBackColor = true;
@@ -117,7 +119,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Chocolate;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(693, 55);
             this.pictureBox2.TabIndex = 13;
@@ -130,7 +132,7 @@
             this.panel1.Controls.Add(this.m_BoutonDCY);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 54);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(155, 803);
             this.panel1.TabIndex = 18;
@@ -142,7 +144,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1537, 54);
             this.panel2.TabIndex = 19;
@@ -174,11 +176,29 @@
             // 
             this.m_label_eject.AutoSize = true;
             this.m_label_eject.BackColor = System.Drawing.Color.Black;
-            this.m_label_eject.Location = new System.Drawing.Point(232, 238);
+            this.m_label_eject.Location = new System.Drawing.Point(214, 199);
             this.m_label_eject.Name = "m_label_eject";
             this.m_label_eject.Size = new System.Drawing.Size(79, 13);
             this.m_label_eject.TabIndex = 23;
             this.m_label_eject.Text = "                        ";
+            // 
+            // m_label_3_debug
+            // 
+            this.m_label_3_debug.AutoSize = true;
+            this.m_label_3_debug.Location = new System.Drawing.Point(276, 160);
+            this.m_label_3_debug.Name = "m_label_3_debug";
+            this.m_label_3_debug.Size = new System.Drawing.Size(45, 13);
+            this.m_label_3_debug.TabIndex = 24;
+            this.m_label_3_debug.Text = "DEBUG";
+            // 
+            // m_label_debug
+            // 
+            this.m_label_debug.AutoSize = true;
+            this.m_label_debug.Location = new System.Drawing.Point(375, 160);
+            this.m_label_debug.Name = "m_label_debug";
+            this.m_label_debug.Size = new System.Drawing.Size(45, 13);
+            this.m_label_debug.TabIndex = 25;
+            this.m_label_debug.Text = "DEBUG";
             // 
             // Mode_Auto
             // 
@@ -186,6 +206,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1537, 857);
+            this.Controls.Add(this.m_label_debug);
+            this.Controls.Add(this.m_label_3_debug);
             this.Controls.Add(this.m_label_eject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -221,5 +243,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label m_label_eject;
+        private System.Windows.Forms.Label m_label_3_debug;
+        private System.Windows.Forms.Label m_label_debug;
     }
 }
