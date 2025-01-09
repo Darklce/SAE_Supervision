@@ -175,76 +175,126 @@ namespace SAE
             UpdateCircleColorFromPLC();
             //m_label_test.Visible = true;
             //m_label_droite_test.Visible = true;
-
-
-
-        }
-        private void m_button_test(object sender, EventArgs e)
-        {
-            if (sensorState == true)
-            {
-                sensorState = false;
-            }
-            else if (sensorState == false)
-            {
-                sensorState = true;
-            }
-        }
-        private void m_label_test_Click(object sender, EventArgs e)
-        {
-
         }
 
+
+        // Variables d'état globales
+        private bool movingRight = false;
+        private bool waitingToReturn = false;
+        private bool returningLeft = false;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
             {
-                // Lire l'état du capteur
-                //Convert.ToBoolean(m_MENU.plc.Read("I3.1")); // Exemple d'adresse du capteur
-
-                // Si le capteur est activé (true), déplacer le label vers le bas
-                if (sensorState && label2.Location.Y < maxPosition)
-                {
-                    label2.Location = new Point(label2.Location.X, label2.Location.Y + labelSpeed);
-                    if (label2.Location.Y == maxPosition)
-                    {
-                        l_bool_valid = true;
-
-                    }
-
-                }
-                // Si le capteur est désactivé (false), déplacer le label vers le haut
-                else if (!sensorState && label2.Location.Y > minPosition)
-                {
-                    label2.Location = new Point(label2.Location.X, label2.Location.Y - labelSpeed);
-
-                    if (label2.Location.Y != maxPosition)
-                    {
-                        l_bool_valid = false;
-
-                    }
-                }
-                 
-                if ((l_bool_valid == true) && (m_label_eject.Location.X < maxPosition2))
-                {
-                    m_label_eject.Location = new Point(m_label_eject.Location.X + labelSpeed, m_label_eject.Location.Y); 
-                    m_label_3_debug.Text = Convert.ToString(m_label_eject.Location.X);
-                }
-                else if ((l_bool_valid == false) && (m_label_eject.Location.X > minPosition2))
-                {
-                    m_label_eject.Location = new Point(m_label_eject.Location.X - labelSpeed, m_label_eject.Location.Y);
-                    m_label_debug.Text = Convert.ToString(label2.Location.Y);
-
-                }
-
+                MettreAJourPositionLabel();    // Mettre à jour le mouvement vertical
+                MettreAJourPositionEjecteur(); // Mettre à jour le mouvement horizontal
             }
             catch (Exception ex)
             {
-                // Gérer les erreurs de lecture depuis le PLC
-                MessageBox.Show($"Erreur de lecture depuis le PLC : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                timer1.Stop(); // Arrête le Timer en cas d'erreur
+                MessageBox.Show($"Erreur : {ex.Message}", "Erreur",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                timer1.Stop(); // Arrête le timer en cas d'erreur
             }
         }
+
+        private void MettreAJourPositionLabel()
+        {
+            if (sensorState && label2.Location.Y < maxPosition) // Monter
+            {
+                DeplacerLabelVerticalement(label2, labelSpeed);
+
+                if (label2.Location.Y <= minPosition) // Si tout en haut
+                {
+                    l_bool_valid = true; // Autorise mouvement horizontal
+                }
+            }
+            else if (!sensorState && label2.Location.Y > minPosition) // Descendre
+            {
+                DeplacerLabelVerticalement(label2, -labelSpeed);
+
+                if (label2.Location.Y >= maxPosition) // Si tout en bas
+                {
+                    l_bool_valid = false; // Stop mouvement horizontal
+                }
+            }
+        }
+
+        private void MettreAJourPositionEjecteur()
+        {
+            if (label2.Location.Y <= minPosition && l_bool_valid) // Commence mouvement horizontal
+            {
+                if (!movingRight && m_label_eject.Location.X < maxPosition2)
+                {
+                    movingRight = true;
+                    waitingToReturn = false;
+                    returningLeft = false;
+
+                    m_label_3_debug.Text = "Moving Right";
+                }
+
+                if (movingRight && m_label_eject.Location.X < maxPosition2)
+                {
+                    DeplacerLabelHorizontalement(m_label_eject, labelSpeed);
+                }
+                else if (m_label_eject.Location.X >= maxPosition2) // Arrivé au maximum
+                {
+                    movingRight = false;
+                    waitingToReturn = true;
+
+                    m_label_3_debug.Text = "Waiting to return";
+                }
+            }
+            else if (label2.Location.Y >= maxPosition && !l_bool_valid) // Commence retour
+            {
+                if (!returningLeft && m_label_eject.Location.X > minPosition2)
+                {
+                    returningLeft = true;
+                    movingRight = false;
+                    waitingToReturn = false;
+
+                    m_label_3_debug.Text = "Returning Left";
+                }
+
+                if (returningLeft && m_label_eject.Location.X > minPosition2)
+                {
+                    DeplacerLabelHorizontalement(m_label_eject, -labelSpeed);
+                }
+                else if (m_label_eject.Location.X <= minPosition2) // Retour complet
+                {
+                    returningLeft = false;
+
+                    m_label_3_debug.Text = "Ready to restart";
+                }
+            }
+        }
+
+        private void DeplacerLabelVerticalement(Label label, int offset)
+        {
+            label.Location = new Point(label.Location.X, label.Location.Y + offset);
+        }
+
+        private void DeplacerLabelHorizontalement(Label label, int offset)
+        {
+            label.Location = new Point(label.Location.X + offset, label.Location.Y);
+        }
+
+        private void m_button_test(object sender, EventArgs e)
+        {
+            sensorState = true;
+        }
+
+        private void m_button_test_false(object sender, EventArgs e)
+        {
+            sensorState = false;
+        }
+
+
+
+
+
+
+
+
     }
 }

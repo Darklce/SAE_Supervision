@@ -45,6 +45,7 @@
             this.m_label_eject = new System.Windows.Forms.Label();
             this.m_label_3_debug = new System.Windows.Forms.Label();
             this.m_label_debug = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +109,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 23);
             this.button2.TabIndex = 17;
-            this.button2.Text = "BUTTON DEBUG";
+            this.button2.Text = "BUTTON TRUE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.m_button_test);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.m_button_test_down);
@@ -200,12 +201,23 @@
             this.m_label_debug.TabIndex = 25;
             this.m_label_debug.Text = "DEBUG";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1269, 169);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "BUTTON FALSE";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.m_button_test_false);
+            // 
             // Mode_Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1537, 857);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.m_label_debug);
             this.Controls.Add(this.m_label_3_debug);
             this.Controls.Add(this.m_label_eject);
@@ -245,5 +257,6 @@
         private System.Windows.Forms.Label m_label_eject;
         private System.Windows.Forms.Label m_label_3_debug;
         private System.Windows.Forms.Label m_label_debug;
+        private System.Windows.Forms.Button button3;
     }
 }
