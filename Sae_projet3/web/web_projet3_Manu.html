@@ -1,0 +1,98 @@
+<HTML>
+
+	<!-- AWP_In_Variable Name='M_trans_bras_rentre_web' -->
+	<!-- AWP_In_Variable Name='M_trans_bras_sorti_web' -->
+	<!-- AWP_In_Variable Name='M_trans_bras_tri_web' -->
+	<!-- AWP_In_Variable Name='M_trans_bras_usin_web' -->
+	<!-- AWP_In_Variable Name='M_piece_saisie_web' -->
+	<!-- AWP_In_Variable Name='M_piece_lachee_web' -->
+	<!-- AWP_In_Variable Name='M_tapis_web' -->
+	<!-- AWP_In_Variable Name='M_barriere_web' -->
+	<!-- AWP_In_Variable Name='M_piece_noire_web' -->
+	<!-- AWP_In_Variable Name='M_piece_rouge_web' -->
+
+	<HEAD>
+
+	<TITLE>
+	web_projet3_Manu
+	</TITLE>
+	</HEAD>
+	<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color:  #fff0ed ;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        button {
+            background-color: #ea3c16;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            background-color:  #ff8368 ;
+            transform: scale(1.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+	
+	<BODY>
+		<script src="modeManu_sae.js"></script>
+
+		<h1>Mode Manuel</h1>
+		
+		<a href="web_projet_3.html" style="text-decoration: none;">
+		<button type="button">Retour</button>
+		</a>
+		
+		<form name="mon_form" method="post" action="">
+            <input type="hidden" name='M_trans_bras_rentre_web'  id='M_trans_bras_rentre_web'>
+			<input type="hidden" name='M_trans_bras_sorti_web'  id='M_trans_bras_sorti_web'>
+			<input type="hidden" name='I_bras_tri_web'  id='I_bras_tri_web'>
+			<input type="hidden" name='I_bras_usin_web'  id='I_bras_usin_web'>
+			<input type="hidden" name='I_piece_saisie_web'  id='I_piece_saisie_web'>
+			<input type="hidden" name='I_piece_lachee_web'  id='I_piece_lachee_web'>
+			<input type="hidden" name='I_tapis_web'  id='I_tapis_web'>
+			<input type="hidden" name='I_barriere_web'  id='I_barriere_web'>
+			<input type="hidden" name='I_piece_noire_web'  id='I_piece_noire_web'>
+			<input type="hidden" name='I_piece_rouge_web'  id='I_piece_rouge_web'>
+			
+        </form>
+		
+	
+    <div class="grid">
+        <button onmousedown="rentrer_bras_mousedown()" onmouseup="raz_mouseup()">Bras Rentre</button>
+        <button onmousedown="sortir_bras_mousedown()" onmouseup="raz_mouseup()">Bras Sorti</button>
+        <button onmousedown="dep_tri_mousedown()" onmouseup="raz_mouseup()">Bras sur tri</button>
+        <button onmousedown="dep_usin_mousedown()" onmouseup="raz_mouseup()">Bras sur usin</button>
+        <button onmousedown="saisir_piece_mousedown()" onmouseup="raz_mouseup()">Pièce Saisie</button>
+        <button onmousedown="lacher_piece_mousedown()" onmouseup="raz_mouseup()">Pièce Lachée</button>
+        <button onmousedown="rotation_tapis_mousedown()" onmouseup="raz_mouseup()">Tapis</button>
+        <button onmousedown="barriere_mousedown()" onmouseup="raz_mouseup()">Barrière</button>
+        <button onmousedown="tri_noire_mousedown()" onmouseup="raz_mouseup()">Pièce Noire</button>
+        <button onmousedown="tri_rouge_mousedown()" onmouseup="raz_mouseup()">Pièce Rouge</button>
+    </div>
+	</BODY>
+
+</HTML>
