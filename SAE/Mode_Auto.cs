@@ -9,14 +9,9 @@ namespace SAE
     public partial class Mode_Auto : Form
     {
         public MENU m_MENU;
-        private Color Circle_Color = Color.Red; // Variable de couleur pour le cercle
         bool l_bool_test = false;
         private object plc;
         private int labelSpeed = 15; // Vitesse de déplacement du label
-        private int maxPosition = 530; // Position maximale vers le bas
-        private int minPosition = 300;  // Position initiale ou minimale
-        private int maxPosition2 = 370; // Position maximale vers la droite
-        private int minPosition2 = 300;  // Position initiale ou gauche
         
 
         bool l_bool_valid = true;
@@ -29,32 +24,23 @@ namespace SAE
 
         public Mode_Auto()
         {
-            InitializeComponent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
-            this.Paint += new PaintEventHandler(Mode_Auto_Paint);
+            InitializeComponent();            
             this.Load += new EventHandler(Mode_Auto_Load);
             InitializeSensorControl();
-            InitializeMirroring();
         }
-        private void InitializeMirroring()
-        {
-            // Initialiser le Timer pour vérifier l'état du capteur
-            rotationTimer = new Timer();
-            rotationTimer.Interval = 100; // Vérifie toutes les 100 ms
-            rotationTimer.Start();
-        }
+        
+
         private void InitializeSensorControl()
         {
-            // Initialiser le Timer
+            //Initialiser le Timer
             timer1 = new Timer();
             timer1.Interval = 50; // Vérifie toutes les 100 ms
             timer1.Start();
 
 
             // Initialiser la position du label
-            label2.Location = new Point(label2.Location.X, minPosition);
-            m_label_eject.Location = new Point(m_label_eject.Location.X, minPosition2);
+            //label2.Location = new Point(label2.Location.X, minPosition);
+            //m_label_eject.Location = new Point(m_label_eject.Location.X, minPosition2);
             
         }
 
@@ -110,39 +96,6 @@ namespace SAE
 
         }
 
-        private void Mode_Auto_Paint(object sender, PaintEventArgs e)
-        {
-
-            // Dessiner un cercle
-            Graphics g = e.Graphics;
-            Brush brush = new SolidBrush(Circle_Color);
-            int x = 400; // Position X du cercle
-            int y = 500; // Position Y du cercle
-            int width = 40; // Largeur du cercle
-            int height = 40; // Hauteur du cercle
-
-            g.FillEllipse(brush, x, y, width, height);
-            // Dessiner un cercle
-            Graphics g1 = e.Graphics;
-            Brush brush1 = new SolidBrush(Circle_Color);
-            int x1 = 400; // Position X du cercle
-            int y1 = 260; // Position Y du cercle
-            int width1 = 40; // Largeur du cercle
-            int height1 = 40; // Hauteur du cercle
-
-            g1.FillEllipse(brush1, x1, y1, width1, height1);
-            // Dessiner un cercle
-            Graphics g2 = e.Graphics;
-            Brush brush2 = new SolidBrush(Circle_Color);
-            int x2 = 600; // Position X du cercle
-            int y2 = 260; // Position Y du cercle
-            int width2 = 40; // Largeur du cercle
-            int height2 = 40; // Hauteur du cercle
-
-            g2.FillEllipse(brush2, x2, y2, width2, height2);
-
-        }  
-
             private void UpdateCircleColorFromPLC()
         {
             // Lire une valeur du PLC
@@ -151,31 +104,19 @@ namespace SAE
             // Mettre à jour la couleur du cercle en fonction de la valeur lue
             if (plcValue)
             {
-                Circle_Color = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+                m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
             }
             else
             {
-                Circle_Color = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
             }
 
 
             Invalidate(); // Redessiner le formulaire
         }
 
-        private void m_button_test_UP(object sender, MouseEventArgs e)
-        {
-            l_bool_test = true;
-            UpdateCircleColorFromPLC();
-          
-        }
 
-        private void m_button_test_down(object sender, MouseEventArgs e)
-        {
-            l_bool_test = false;
-            UpdateCircleColorFromPLC();
-            //m_label_test.Visible = true;
-            //m_label_droite_test.Visible = true;
-        }
+  
 
 
         // Variables d'état globales
@@ -183,118 +124,39 @@ namespace SAE
         private bool waitingToReturn = false;
         private bool returningLeft = false;
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_button_test_MouseDown(object sender, MouseEventArgs e)
+        {
+            l_bool_test = false;
+            UpdateCircleColorFromPLC();
+        }
+
+        private void m_button_test_MouseUp(object sender, MouseEventArgs e)
+        {
+            l_bool_test = true;
+            UpdateCircleColorFromPLC();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
+            if (Convert.ToBoolean(m_MENU.plc.Read("I5.2")))
             {
-                MettreAJourPositionLabel();    // Mettre à jour le mouvement vertical
-                MettreAJourPositionEjecteur(); // Mettre à jour le mouvement horizontal
+                m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Erreur : {ex.Message}", "Erreur",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                timer1.Stop(); // Arrête le timer en cas d'erreur
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
             }
         }
-
-        private void MettreAJourPositionLabel()
-        {
-            if (sensorState && label2.Location.Y < maxPosition) // Monter
-            {
-                DeplacerLabelVerticalement(label2, labelSpeed);
-
-                if (label2.Location.Y <= minPosition) // Si tout en haut
-                {
-                    l_bool_valid = true; // Autorise mouvement horizontal
-                }
-            }
-            else if (!sensorState && label2.Location.Y > minPosition) // Descendre
-            {
-                DeplacerLabelVerticalement(label2, -labelSpeed);
-
-                if (label2.Location.Y >= maxPosition) // Si tout en bas
-                {
-                    l_bool_valid = false; // Stop mouvement horizontal
-                }
-            }
-        }
-
-        private void MettreAJourPositionEjecteur()
-        {
-            if (label2.Location.Y <= minPosition && l_bool_valid) // Commence mouvement horizontal
-            {
-                if (!movingRight && m_label_eject.Location.X < maxPosition2)
-                {
-                    movingRight = true;
-                    waitingToReturn = false;
-                    returningLeft = false;
-
-                    m_label_3_debug.Text = "Moving Right";
-                }
-
-                if (movingRight && m_label_eject.Location.X < maxPosition2)
-                {
-                    DeplacerLabelHorizontalement(m_label_eject, labelSpeed);
-                }
-                else if (m_label_eject.Location.X >= maxPosition2) // Arrivé au maximum
-                {
-                    movingRight = false;
-                    waitingToReturn = true;
-
-                    m_label_3_debug.Text = "Waiting to return";
-                }
-            }
-            else if (label2.Location.Y >= maxPosition && !l_bool_valid) // Commence retour
-            {
-                if (!returningLeft && m_label_eject.Location.X > minPosition2)
-                {
-                    returningLeft = true;
-                    movingRight = false;
-                    waitingToReturn = false;
-
-                    m_label_3_debug.Text = "Returning Left";
-                }
-
-                if (returningLeft && m_label_eject.Location.X > minPosition2)
-                {
-                    DeplacerLabelHorizontalement(m_label_eject, -labelSpeed);
-                }
-                else if (m_label_eject.Location.X <= minPosition2) // Retour complet
-                {
-                    returningLeft = false;
-
-                    m_label_3_debug.Text = "Ready to restart";
-                }
-            }
-        }
-
-        private void DeplacerLabelVerticalement(Label label, int offset)
-        {
-            label.Location = new Point(label.Location.X, label.Location.Y + offset);
-        }
-
-        private void DeplacerLabelHorizontalement(Label label, int offset)
-        {
-            label.Location = new Point(label.Location.X + offset, label.Location.Y);
-        }
-
-        private void m_button_test(object sender, EventArgs e)
-        {
-            sensorState = true;
-        }
-
-        private void m_button_test_false(object sender, EventArgs e)
-        {
-            sensorState = false;
-        }
-
-
-
-
-
-
-
-
     }
 }
