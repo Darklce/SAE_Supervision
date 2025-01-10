@@ -180,7 +180,7 @@
             // m_Label_Connection
             // 
             this.m_Label_Connection.AutoSize = true;
-            this.m_Label_Connection.Location = new System.Drawing.Point(77, 642);
+            this.m_Label_Connection.Location = new System.Drawing.Point(18, 642);
             this.m_Label_Connection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.m_Label_Connection.Name = "m_Label_Connection";
             this.m_Label_Connection.Size = new System.Drawing.Size(48, 16);

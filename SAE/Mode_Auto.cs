@@ -71,20 +71,8 @@ namespace SAE
 
         private void m_BoutonDCY_MouseDown(object sender, MouseEventArgs e)
         {
-            //m_MENU.plc.Write("M1.4", 1);
+            m_MENU.plc.Write("M1.4", 1);
             timer1.Tick += timer1_Tick;
-            //rotationTimer.Tick += timer2_Tick;
-/*
-            bool lirePres = Convert.ToBoolean(m_MENU.plc.Read("M1.4"));
-            if (lirePres == true)
-            {
-                UpdateCircleColorFromPLC();
-            }
-            else
-            {
-                UpdateCircleColorFromPLC();
-            }
-*/
         }
 
         private void m_BoutonDCY_MouseUp(object sender, MouseEventArgs e)
