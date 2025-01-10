@@ -11,6 +11,8 @@ namespace SAE
         public MENU m_MENU;
         bool l_bool_test = false;
         private object plc;
+        private object plc2;
+        private object plc3;
         private int labelSpeed = 15; // Vitesse de déplacement du label
         
 
@@ -149,7 +151,7 @@ namespace SAE
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(m_MENU.plc.Read("I5.2")))
+            if (Convert.ToBoolean(m_MENU.plc.Read("I5.2"))) //Absence pièce dans le stock
             {
                 m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
             }
@@ -157,6 +159,86 @@ namespace SAE
             {
                 m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
             }
+            if (Convert.ToBoolean(m_MENU.plc.Read("I3.1"))) //Ascenceur en bas
+            {
+                panel3.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel3.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc.Read("I3.2"))) //Ascenceur en haut
+            {
+                panel4.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel4.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc2.Read("I1.0"))) //Pièce sur usinage
+            {
+                panel5.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel5.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc2.Read("I1.2"))) //Pièce qui se fait percer
+            {
+                panel6.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel6.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc2.Read("I2.3"))) //Palpeur Bas
+            {
+                panel8.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel8.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc2.Read("I5.2"))) //Présence pièce
+            {
+                panel10.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                panel10.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc3.Read("I1.0"))) //pièce dans goulotte
+            {
+                panel6.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc3.Read("I2.1"))) //Pièce sur le tapis
+            {
+                m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc3.Read("I1.1"))) //Pièce plastique noire
+            {
+                m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+            if (Convert.ToBoolean(m_MENU.plc3.Read("I1.2"))){//Pièce plastique rouge
+                m_panel_stock.BackColor = Color.Green; // Si la valeur est vraie, mettre la couleur en vert
+            }
+            else
+            {
+                m_panel_stock.BackColor = Color.Red; // Si la valeur est fausse, mettre la couleur en rouge
+            }
+
         }
     }
 }
